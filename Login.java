@@ -22,7 +22,7 @@ public class Login implements ActionListener{
     
     
     Login(){
-      //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
       frame.setSize(500,500);
       frame.setLayout(null);
       frame.setVisible(true);
@@ -54,7 +54,8 @@ public class Login implements ActionListener{
         frame.setVisible(false);        
         
       }
-      if(e.getSource()==b1){     
+      //giriş yap butonu
+        if(e.getSource()==b1){     
         String a = kullaniciGiris.getText();
         String b = getK_adi(); 
         String c = parolaGiris.getText();
