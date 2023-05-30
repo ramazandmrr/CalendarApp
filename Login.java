@@ -4,10 +4,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
-import org.w3c.dom.Text;
 
 public class Login implements ActionListener{
     
@@ -27,6 +26,7 @@ public class Login implements ActionListener{
       frame.setSize(500,500);
       frame.setLayout(null);
       frame.setVisible(true);
+      frame.setLocation(500, 140);
       frame.add(kullaniciGiris);
       frame.add(parolaGiris);
       frame.add(kullaniciAdi);
@@ -46,30 +46,43 @@ public class Login implements ActionListener{
       b1.addActionListener(this);     
      
     } 
+    
     @Override
     public void actionPerformed(ActionEvent e) {
       if(e.getSource()==b2){
-        Kayit kayit = new Kayit();
-        frame.setVisible(false);
+        Kayit kayit = new Kayit();       
+        frame.setVisible(false);        
         
       }
-      if(e.getSource()==b1){  
-        System.out.println();
-        if(kullaniciGiris.getText()==a){           
-          frame.setVisible(false);   
+      if(e.getSource()==b1){     
+        String a = kullaniciGiris.getText();
+        String b = getK_adi(); 
+        String c = parolaGiris.getText();
+        String d = getP_la();       
+        if(a.equals(b) && c.equals(d)){                     
           Takvim takvim = new Takvim();
+          frame.setVisible(false); 
+        }else{
+          JOptionPane.showMessageDialog(frame,"hatalı şifre veya kullanıcı adı !"); 
         }
       }   
     }
     
+    public String K_adi;
+    public String P_la;
     
-    String a;
-    public String kullan( String text ){
-      return text;
+    public void setK_adi(String K_adi){
+      this.K_adi = K_adi;
     }
-   
-    
-    
+    public String getK_adi(){
+      return K_adi;
+    }
+    public void setP_la(String P_la){
+      this.P_la = P_la;
+    }
+    public String getP_la(){
+      return P_la;
+    }
 
     
 }
