@@ -66,8 +66,9 @@ public class Takvim implements ActionListener{
     
     
    } 
-    int gün = calendar.get(Calendar.DATE);
+    int gün = calendar.get(Calendar.DATE);  // gercek zamanlı günü alma
     String gün_CHECK = String.valueOf(gün);
+  // hatırlatıcı butonu
    @Override
    public void actionPerformed(ActionEvent e) {
     if(e.getSource()==hatirlatici){
