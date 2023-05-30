@@ -100,6 +100,7 @@ public class Kayit implements ActionListener{
     girisYazisi.setBounds(70, 30, 400, 50); 
      
     }
+    //butona tıkaldıgında oluscakalar islemler
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==kayitOl){
